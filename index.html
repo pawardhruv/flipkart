@@ -344,4 +344,342 @@
 </footer>
 </body>
 </html
+/* General Body and Container */
+body {
+    font-family: sans-serif; /* Use a suitable font, e.g., 'Open Sans', 'Roboto' */
+    margin: 0;
+    display: flex; /* Or use grid for the overall layout */
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Light background */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 280px; /* Approximate width */
+    background-color: #1abc9c; /* Greenish color */
+    color: white;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky; /* For sticky behavior */
+    top: 0;
+    height: 100vh; /* Make it take full height */
+    overflow-y: auto; /* For scrollable content if sidebar is long */
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar-header .close-icon {
+    font-size: 2.5em;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.sidebar-header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li {
+    margin-bottom: 15px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav a i {
+    margin-right: 10px;
+}
+
+.main-nav a:hover,
+.main-nav .active a {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-footer {
+    margin-top: auto; /* Pushes to the bottom */
+    text-align: center;
+    font-size: 0.9em;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.2em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #f0f0f0;
+}
+
+/* Main Content Area */
+.content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: white; /* Main content background */
+    box-sizing: border-box;
+}
+
+.main-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    outline: none;
+    flex-grow: 1;
+}
+
+.search-bar button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* Blog Posts Grid */
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.blog-post {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+.blog-post .post-image {
+    width: 100%;
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    display: block;
+}
+
+.blog-post h2 {
+    font-size: 1.5em;
+    margin: 15px 20px 10px;
+    color: #333;
+}
+
+.blog-post p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 20px 15px;
+}
+
+.blog-post .new-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #1abc9c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.blog-post .highlight {
+    color: #1abc9c;
+    font-weight: bold;
+}
+
+.post-meta, .post-comments-author {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    color: #888;
+    margin: 0 20px 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+}
+
+.post-comments-author {
+    margin-bottom: 20px;
+    border-bottom: none;
+}
+
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.pagination button {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.pagination button.active {
+    background-color: #1abc9c;
+    color: white;
+    border-color: #1abc9c;
+}
+
+.pagination .page-numbers {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.pagination .page-numbers span {
+    margin-right: 10px;
+    color: #555;
+}
+
+.pagination .page-numbers a {
+    text-decoration: none;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    margin: 0 3px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination .page-numbers a.active,
+.pagination .page-numbers a:hover {
+    background-color: #1abc9c;
+    color: white;
+    border-color: #1abc9c;
+}
+
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.main-footer a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+/* Basic Responsiveness - adjust breakpoints as needed */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static; /* Remove sticky on small screens */
+        padding: 20px;
+    }
+
+    .sidebar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .sidebar-header .close-icon {
+        display: none; /* Hide close icon on larger screens, might be used for mobile toggle */
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav li {
+        margin: 5px 10px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .blog-posts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .main-header {
+        justify-content: center;
+    }
+
+    .blog-post {
+        margin: 0 10px;
+    }
+    .pagination {
+        flex-direction: column;
+    }
+    .pagination .page-numbers {
+        margin-top: 15px;
+        margin-left: 0;
+    }
+}
+    
    
